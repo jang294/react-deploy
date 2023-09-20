@@ -2,7 +2,7 @@ import "./styles/reset.css";
 import "./styles/global.css";
 
 function App() {
-  return <div>Hello World</div>;
+  return <div className="layout">Hello, React </div>;
 }
 
 export default App;
