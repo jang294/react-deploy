@@ -5,6 +5,7 @@ import ArrowIcon from "../../assets/images/ic_arrow.svg";
 import LinkListItem from "../../components/LinkListItem/LinkListItem";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
 import EventInfo from "../../components/EventInfo/EventInfo";
+import AccordianListItem from "../../components/AccordianListItem/AccordianListItem";
 
 const events = [
   { num: 1, title: "기간", text: "2023.07.01(토) ~ 2023.12.31(일)" },
@@ -68,21 +69,11 @@ const Home = () => {
       <section className={styles.linkSection}>
         {/* 메뉴 1 */}
         <div>
-          <div
-            className={styles.accordionContainer}
+          <AccordianListItem
+            title={"투자에 필요한 더~ 많은 혜택"}
             onClick={onClickAccordion1}
-          >
-            <div className={styles.accordionTitle}>
-              투자에 필요한 더~ 많은 혜택
-            </div>
-            <img
-              src={ArrowIcon}
-              className={`${styles.arrowIcon} ${
-                openAccordion1 ? styles.arrowOpen : ""
-              }`}
-            />
-          </div>
-
+            isOpen={openAccordion1}
+          />
           <div
             className={`${styles.linkContentContainer} ${
               openAccordion1 ? styles.itemOpen : ""
@@ -98,15 +89,11 @@ const Home = () => {
         </div>
 
         {/* 메뉴 2 */}
-        <div className={styles.accordionContainer} onClick={onClickAccordion2}>
-          <div className={styles.accordionTitle}>쉽고 빠른 투자 정보</div>
-          <img
-            src={ArrowIcon}
-            className={`${styles.arrowIcon} ${
-              openAccordion2 ? styles.arrowOpen : ""
-            }`}
-          />
-        </div>
+        <AccordianListItem
+          title={"쉽고 빠른 투자 정보"}
+          onClick={onClickAccordion2}
+          isOpen={openAccordion2}
+        />
       </section>
 
       {/* 이벤트 유의사항 */}
