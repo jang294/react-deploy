@@ -4,6 +4,12 @@ import HeaderCard from "../../assets/images/header_1.svg";
 import ArrowIcon from "../../assets/images/ic_arrow.svg";
 import LinkListItem from "../../components/LinkListItem/LinkListItem";
 import EventLogo1 from "../../assets/images/event_logo_1.png";
+import EventInfo from "../../components/EventInfo/EventInfo";
+
+const events = [
+  { num: 1, title: "기간", text: "2023.07.01(토) ~ 2023.12.31(일)" },
+  { num: 3, title: "대상", text: "신한투자증권 생애 첫 계좌 개설 신규 고객" },
+];
 
 const Home = () => {
   const [openAccordion1, setOpenAccordion1] = useState(false);
@@ -49,18 +55,9 @@ const Home = () => {
 
         {/* 기간/대상 */}
         <div className={styles.infoContainer}>
-          <div className={styles.eventInfo}>
-            <div className={styles.infoTitle}>기간</div>
-            <div className={styles.infoText}>
-              2023.07.01(토) ~ 2023.12.31(일)
-            </div>
-          </div>
-          <div className={styles.eventInfo}>
-            <div className={styles.infoTitle}>대상</div>
-            <div className={styles.infoText}>
-              신한투자증권 생애 첫 계좌 개설 신규 고객
-            </div>
-          </div>
+          {events.map((event) => (
+            <EventInfo title={event.title} text={event.text} />
+          ))}
         </div>
         {/* 혜택받으러가기 버튼 */}
         <a>
