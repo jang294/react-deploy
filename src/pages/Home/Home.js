@@ -9,7 +9,7 @@ import AccordianListItem from "../../components/AccordianListItem/AccordianListI
 import TopNav from "../../components/TopNav/TopNav";
 import { useNavigate } from "react-router-dom";
 
-const events = [
+const eventInformations = [
   { num: 1, title: "기간", text: "2023.07.01(토) ~ 2023.12.31(일)" },
   { num: 3, title: "대상", text: "신한투자증권 생애 첫 계좌 개설 신규 고객" },
 ];
@@ -65,7 +65,7 @@ const Home = () => {
 
           {/* 기간/대상 */}
           <div className={styles.infoContainer}>
-            {events.map((event) => (
+            {eventInformations.map((event) => (
               <EventInfo title={event.title} text={event.text} />
             ))}
           </div>
